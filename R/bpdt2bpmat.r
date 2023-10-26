@@ -1,8 +1,8 @@
 bpdt2bpmat <- function(bpdt, n) {
 
     bpmat <- matrix(0, nrow = n, ncol = n)
-    I <- cbind(bpdt[[1]], bpdt[[2]])
-    bpmat[I] <- bpdt[[3]]
+    I <- rbind(cbind(bpdt[[1]], bpdt[[2]]), cbind(bpdt[[2]], bpdt[[1]]))
+    bpmat[I] <- rep(bpdt[[3]], 2)
 
     return(bpmat)
 
